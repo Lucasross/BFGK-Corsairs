@@ -12,8 +12,6 @@ public class PlayerController : MonoBehaviour
     public float limitY = 4f;
     public float limitX = 6f;
 
-    
-
     private Rigidbody2D rb;
 
     void Start()
@@ -23,31 +21,24 @@ public class PlayerController : MonoBehaviour
   
     void Update()
     {
-
         verticalInput = Input.GetAxis("Vertical");       
         horizontalInput = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(horizontalInput, verticalInput) * speed ;
 
         if (transform.position.y < -limitY && verticalInput < 0)
-        {
             rb.velocity = rb.velocity * Vector2.right;
-        }
+       
         if (transform.position.y > limitY && verticalInput > 0)
-        {
             rb.velocity = rb.velocity * Vector2.right;
-        }
+        
         if (transform.position.x < -limitX && horizontalInput < 0)
-        {
             rb.velocity = rb.velocity * Vector2.up;
-        }
+        
         if (transform.position.x > limitX && horizontalInput > 0)
-        {
-            rb.velocity = rb.velocity * Vector2.up;
-        }
-
-
+            rb.velocity = rb.velocity * Vector2.up;  
     }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawWireCube(new Vector3(limitX, 0, 0), Vector3.one);
