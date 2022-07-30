@@ -29,7 +29,8 @@ public class MasterCharacter : MonoBehaviour
 		if (OutOfWay())
 			ModAngriness(2 * Time.deltaTime);
 
-		angriness -= 0.1f * Time.deltaTime;
+		if (angriness > 0)
+			angriness -= 0.1f * Time.deltaTime;
 	}
 	private void OnCollisionEnter2D(Collision2D collision2D)
 	{
