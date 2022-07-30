@@ -5,8 +5,11 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class ObjectDestroyer : MonoBehaviour
 {
-	private void OnCollisionEnter2D(Collision2D collision)
+	public MapGeneration map;
+
+	private void OnTriggerEnter2D(Collider2D collision)
 	{
+		map.GenerateNextRoom();
 		Destroy(collision.gameObject);
 	}
 }
