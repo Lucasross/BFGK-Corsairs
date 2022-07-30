@@ -28,16 +28,16 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector2(horizontalInput, verticalInput) * speed;
 
-        if (transform.position.y < limitYNeg + masterCharacter.position.y)
-            rb.position = new Vector2(rb.position.x, masterCharacter.position.y + limitYNeg);
+        if (transform.position.y > limitY + masterCharacter.position.y)
+            rb.position = new Vector2(rb.position.x, limitY + masterCharacter.position.y);
 
-        if (transform.position.y < limitYNeg + masterCharacter.position.y && verticalInput < 0) { }
-            rb.velocity = rb.velocity * Vector2.right;
-   
-        if (transform.position.y > limitY + masterCharacter.position.y && verticalInput > 0)
-            rb.velocity = rb.velocity * Vector2.right;
+        if (transform.position.y < limitYNeg + masterCharacter.position.y && verticalInput < 0)
+		    rb.velocity = rb.velocity * Vector2.right;
 
-        if (transform.position.x < -limitX && horizontalInput < 0)
+		if (transform.position.y > limitY + masterCharacter.position.y && verticalInput > 0)
+			rb.velocity = rb.velocity * Vector2.right;
+
+		if (transform.position.x < -limitX && horizontalInput < 0)
             rb.velocity = rb.velocity * Vector2.up;
 
         if (transform.position.x > limitX && horizontalInput > 0)
