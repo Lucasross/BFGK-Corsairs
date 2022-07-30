@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 435460199}
   - component: {fileID: 435460201}
-  - component: {fileID: 435460200}
+  - component: {fileID: 8442519484891805096}
   m_Layer: 0
   m_Name: Rock (1)
   m_TagString: Obstacles
@@ -85,8 +85,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &435460200
-BoxCollider2D:
+--- !u!58 &8442519484891805096
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -99,18 +99,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9375, y: 0.9375}
-    newSize: {x: 0.9375, y: 0.9375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9375, y: 0.9375}
-  m_EdgeRadius: 0
+  m_Radius: 0.46875
 --- !u!1 &833248184975188346
 GameObject:
   m_ObjectHideFlags: 0
@@ -2591,7 +2581,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2644187748025980099}
   - component: {fileID: 1881321858759338889}
-  - component: {fileID: 782115436519349337}
+  - component: {fileID: 7556325865220802217}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Obstacles
@@ -2666,8 +2656,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &782115436519349337
-BoxCollider2D:
+--- !u!58 &7556325865220802217
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2680,18 +2670,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9375, y: 0.9375}
-    newSize: {x: 0.9375, y: 0.9375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9375, y: 0.9375}
-  m_EdgeRadius: 0
+  m_Radius: 0.46875
 --- !u!1 &6364808908893465989
 GameObject:
   m_ObjectHideFlags: 0
