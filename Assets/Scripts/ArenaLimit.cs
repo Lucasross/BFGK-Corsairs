@@ -22,8 +22,7 @@ public class ArenaLimit : MonoBehaviour
 
 	void LateUpdate()
 	{
-		if (transform.position.y > limitY + cameraRef.position.y)
-			rb.position = new Vector2(rb.position.x, limitY + cameraRef.position.y);
+		
 
 		if(!master)
 		{
@@ -38,6 +37,8 @@ public class ArenaLimit : MonoBehaviour
 			if (transform.position.y < limitYNeg + cameraRef.position.y)
 				rb.position = new Vector2(rb.position.x, limitYNeg + cameraRef.position.y);
 		}
+		if (transform.position.y > limitY + cameraRef.position.y)
+			rb.position = new Vector2(rb.position.x, limitY + cameraRef.position.y);
 
 		if (transform.position.x < -limitX && rb.velocity.x < 0)
 			rb.velocity = rb.velocity * Vector2.up;
