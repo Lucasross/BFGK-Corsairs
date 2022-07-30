@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraRef: {fileID: 0}
-  limitY: 5
-  limitYNeg: -5
-  limitX: 8.9
+  limitY: 7.5
+  limitYNeg: -7.5
+  limitX: 13
   master: 0
