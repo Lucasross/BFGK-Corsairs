@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
-public class MasterCharacter : MonoBehaviour
+[RequireComponent(typeof(Rigidbody2D))]
+public class MoveY : MonoBehaviour
 {
 	public int speed;
 
