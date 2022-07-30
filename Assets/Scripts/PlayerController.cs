@@ -11,9 +11,12 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private Animator anim;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -22,6 +25,7 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
 
         rb.velocity = new Vector2(horizontalInput, verticalInput) * speed;
+        anim.SetBool("Moving", rb.velocity.magnitude != 0);
     }
 
 }
