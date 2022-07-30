@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 346851357}
   - component: {fileID: 346851358}
+  - component: {fileID: 346851360}
   - component: {fileID: 346851355}
   - component: {fileID: 346851359}
   - component: {fileID: 346851354}
@@ -287,10 +288,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraRef: {fileID: 1435592605}
-  limitY: 5
+  limitY: 4.4
   limitYNeg: -5
   limitX: 8.9
   master: 1
+--- !u!114 &346851360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 346851351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027d480220b3e394ea166815caefdca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angriness: 0
+  maxAngriness: 4
+  wayLimit: 3
+  gameOver: 0
 --- !u!1 &422436971
 GameObject:
   m_ObjectHideFlags: 0
