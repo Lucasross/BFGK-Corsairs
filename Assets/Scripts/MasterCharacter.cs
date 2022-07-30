@@ -12,25 +12,33 @@ public class MasterCharacter : MonoBehaviour
 
 	public bool gameOver;
 
-    private void Start()
-    {
-        gameOver = false;
-    }
-    private void Update()
+	public GameObject particle;
+
+	private void Start()
+	{
+		gameOver = false;
+	}
+	private void Update()
 	{
 		if (angriness >= maxAngriness)
-        {
+		{
 			gameOver = true;
 			DoGameOver();
 		}
 
 		if (OutOfWay())
-			angriness += 2 * Time.deltaTime;
+			ModAngriness(2 * Time.deltaTime);
 	}
 	private void OnCollisionEnter2D(Collision2D collision2D)
 	{
 		if (collision2D.gameObject.tag == "Obstacles")
-			angriness++;
+			ModAngriness(1);
+	}
+
+	public void ModAngriness(float value)
+	{
+		Instantiate(particle, transform);
+		angriness += value;
 	}
 
 	private bool OutOfWay()
@@ -46,8 +54,8 @@ public class MasterCharacter : MonoBehaviour
 	}
 	IEnumerator RestartGame()
 	{
-		yield return new WaitForSeconds(3f); //time on the GameOver image before restart
+		yield return new WaitForSeconds(5f); //time on the GameOver image before restart
 		SceneManager.LoadScene(0);
 	}
-	
+
 }
