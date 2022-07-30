@@ -9,10 +9,7 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 10f;
 
-    public float limitY = 4f;
-    public float limitX = 6f;
-
-    private Rigidbody2D rb;
+    Rigidbody2D rb;
 
     void Start()
     {
@@ -21,30 +18,9 @@ public class PlayerController : MonoBehaviour
   
     void Update()
     {
-        verticalInput = Input.GetAxis("Vertical");       
+        verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
 
-        rb.velocity = new Vector2(horizontalInput, verticalInput) * speed ;
-
-        if (transform.position.y < -limitY && verticalInput < 0)
-            rb.velocity = rb.velocity * Vector2.right;
-       
-        if (transform.position.y > limitY && verticalInput > 0)
-            rb.velocity = rb.velocity * Vector2.right;
-        
-        if (transform.position.x < -limitX && horizontalInput < 0)
-            rb.velocity = rb.velocity * Vector2.up;
-        
-        if (transform.position.x > limitX && horizontalInput > 0)
-            rb.velocity = rb.velocity * Vector2.up;  
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireCube(new Vector3(limitX, 0, 0), Vector3.one);
-        Gizmos.DrawWireCube(new Vector3(-limitX, 0, 0), Vector3.one);
-
-        Gizmos.DrawWireCube(new Vector3(0, limitY, 0), Vector3.one);
-        Gizmos.DrawWireCube(new Vector3(0, -limitY, 0), Vector3.one);
+        rb.velocity = new Vector2(horizontalInput, verticalInput) * speed;
     }
 }
