@@ -33,7 +33,17 @@ public class MasterCharacter : MonoBehaviour
 	}
 	private void OnCollisionEnter2D(Collision2D collision2D)
 	{
-		if (collision2D.gameObject.tag == "Obstacles")
+		MeetObstacles(collision2D.gameObject);
+	}
+
+	private void OnTriggerEnter2D(Collider2D collision2D)
+	{
+		MeetObstacles(collision2D.gameObject);
+	}
+
+	private void MeetObstacles(GameObject collision2D)
+	{
+		if (collision2D.tag == "Obstacles")
 			ModAngriness(1);
 	}
 
