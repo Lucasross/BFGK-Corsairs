@@ -18,7 +18,7 @@ public class MasterCharacter : MonoBehaviour
     }
     private void Update()
 	{
-		if (angriness == maxAngriness)
+		if (angriness >= maxAngriness)
         {
 			gameOver = true;
 			DoGameOver();
