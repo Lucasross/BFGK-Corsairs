@@ -14,8 +14,13 @@ public class MasterCharacter : MonoBehaviour
 
 	public GameObject particle;
 
+	private AudioSource audio;
+	public AudioClip angryMan;
+
 	private void Start()
 	{
+		audio = GetComponent<AudioSource>();
+
 		gameOver = false;
 	}
 	private void Update()
@@ -51,8 +56,8 @@ public class MasterCharacter : MonoBehaviour
 	public void ModAngriness(float value)
 	{
 		Instantiate(particle, transform);
+		audio.PlayOneShot(angryMan, 0.1f);
 		angriness += value;
-
 	}
 
 	private bool OutOfWay()
