@@ -14,6 +14,7 @@ public class MasterCharacter : MonoBehaviour
 
 	public GameObject particle;
 
+	private SpriteRenderer sprite;
 	private AudioSource audio;
 	public AudioClip angryMan;
 	public GameObject endPicture;
@@ -21,6 +22,7 @@ public class MasterCharacter : MonoBehaviour
 	private void Start()
 	{
 		audio = GetComponent<AudioSource>();
+		sprite = GetComponent<SpriteRenderer>();
 
 		gameOver = false;
 	}
@@ -36,7 +38,9 @@ public class MasterCharacter : MonoBehaviour
 			ModAngriness(2 * Time.deltaTime);
 
 		if (angriness > 0)
-			angriness -= 0.1f * Time.deltaTime;
+			angriness -= 0.04f * Time.deltaTime;
+
+		sprite.color = new Color(1, Mathf.InverseLerp(maxAngriness, 0, angriness), Mathf.InverseLerp(maxAngriness, 0, angriness));
 	}
 	private void OnCollisionEnter2D(Collision2D collision2D)
 	{
@@ -56,6 +60,7 @@ public class MasterCharacter : MonoBehaviour
 
 	public void ModAngriness(float value)
 	{
+		Debug.Log("StackTrace");
 		Instantiate(particle, transform);
 		audio.PlayOneShot(angryMan, 0.1f);
 		angriness += value;
@@ -68,7 +73,6 @@ public class MasterCharacter : MonoBehaviour
 
 	void DoGameOver()
 	{
-		endPicture.SetActive(true); //Activate endPicture picture
 		//source.PlayOneShot(endsong, 0.1f);
 		StartCoroutine(RestartGame());
 	}
