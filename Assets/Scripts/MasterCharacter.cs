@@ -16,6 +16,7 @@ public class MasterCharacter : MonoBehaviour
 
 	private AudioSource audio;
 	public AudioClip angryMan;
+	public GameObject endPicture;
 
 	private void Start()
 	{
@@ -67,13 +68,13 @@ public class MasterCharacter : MonoBehaviour
 
 	void DoGameOver()
 	{
-		//endPic.SetActive(true); //Activate endPicture picture
-		//source.PlayOneShot(song, 0.1f);
+		endPicture.SetActive(true); //Activate endPicture picture
+		//source.PlayOneShot(endsong, 0.1f);
 		StartCoroutine(RestartGame());
 	}
 	IEnumerator RestartGame()
 	{
-		yield return new WaitForSeconds(5f); //time on the GameOver image before restart
+		yield return new WaitForSeconds(3f); //time on the GameOver image before restart
 		SceneManager.LoadScene(0);
 	}
 

@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class AnimalScript : MonoBehaviour
 {
+    public bool poulet;
+
     void Update()
     {
-        transform.position = new Vector2(Mathf.PingPong(Time.time, 6), transform.position.y);
+        if (poulet)
+        {
+            transform.position = new Vector2(Mathf.PingPong(Time.time * 3, 10), transform.position.y);
+        }
+        else
+            transform.position = new Vector2(Mathf.PingPong(Time.time, 6), transform.position.y);
     }
 }
